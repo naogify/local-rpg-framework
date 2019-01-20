@@ -414,6 +414,7 @@ enchant.ENV = {
         var ua = navigator.userAgent;
         var vendor = navigator.vendor || "";
         // non-local access, not on mobile mobile device, not on safari
+        // Add window to prevent to cause compile error.
         return (window.location.href.indexOf('http') === 0 && ua.indexOf('Mobile') === -1 && vendor.indexOf('Apple') !== -1);
     }()),
     /**
@@ -471,6 +472,7 @@ enchant.ENV = {
      * @type Boolean
      */
     USE_WEBAUDIO: (function() {
+        // Add window to prevent to cause compile error.
         return window.location.protocol !== 'file:';
     }()),
     /**
