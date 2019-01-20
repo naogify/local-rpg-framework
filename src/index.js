@@ -1,8 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './assets/css/index.css';
+import App from './component/App';
 import * as serviceWorker from './serviceWorker';
+import './assets/enchant.js';
+
+
+enchant();
+window.onload = function () {
+    game.onload = function () {
+
+        var stage = new Group();
+        stage.addChild(map);
+        stage.addChild(player);
+        // stage.addChild(foregroundMap);
+        game.rootScene.addChild(stage);
+
+        var pad = new Pad();
+        pad.x = 0;
+        pad.y = 220;
+        game.rootScene.addChild(pad);
+
+    };
+}
+
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
